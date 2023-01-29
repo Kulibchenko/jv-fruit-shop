@@ -1,18 +1,19 @@
 package core.basesyntax;
 
-import core.basesyntax.service.CalculateService;
-import core.basesyntax.service.impl.CalculateServiceImpl;
-import core.basesyntax.service.impl.ReaderServiceImpl;
-import core.basesyntax.service.impl.WriteServiceImpl;
+import core.basesyntax.service.Calculate;
+import core.basesyntax.service.Impl.CalculateImpl;
+import core.basesyntax.service.Impl.ReaderServiceImpl;
+import core.basesyntax.service.Impl.WriteServiceImpl;
+
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
         ReaderServiceImpl readerService = new ReaderServiceImpl();
         WriteServiceImpl writeService = new WriteServiceImpl();
-        CalculateService calculateService = new CalculateServiceImpl();
+        Calculate calculate = new CalculateImpl();
         List<String> dateFromFile = readerService.readFromFile();
-        calculateService.calculateQuantity(dateFromFile);
+        calculate.calculateQuantity(dateFromFile);
         writeService.writeToFile();
     }
 }

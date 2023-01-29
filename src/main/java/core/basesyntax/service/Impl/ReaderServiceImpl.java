@@ -1,4 +1,4 @@
-package core.basesyntax.service.impl;
+package core.basesyntax.service.Impl;
 
 import core.basesyntax.service.ReaderService;
 import java.io.IOException;
@@ -8,7 +8,7 @@ import java.util.List;
 
 public class ReaderServiceImpl implements ReaderService {
     private static final String fileName = "src/main/resources/database.csv";
-    private List<String> operations;
+    List<String> operations;
 
     @Override
     public List<String> readFromFile() {
